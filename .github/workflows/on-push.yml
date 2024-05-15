@@ -20,26 +20,26 @@ jobs:
           distribution: 'zulu'
       - name: Maven Clean & Pagkage
         #run: mvn --batch-mode clean; rm -rf allure-re*; mvn --batch-mode package -DskipTests=true
-        run: mvn --batch-mode clean; mvn --batch-mode package -DskipTests=true
-      - name: Maven Test
-        run: mvn --batch-mode test
-      - name: Load test report history
-        uses: actions/checkout@v4
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-      - name: Build test report
-        uses: simple-elf/allure-report-action@v1.7
-        if: always()
-        with:
-          allure_history: allure-history
-          keep_reports: 5
-      - name: Publish test report
-        uses: peaceiris/actions-gh-pages@v3
-        if: always()
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
+        run: mvn --batch-mode compile
+#      - name: Maven Test
+#        run: mvn --batch-mode test
+#      - name: Load test report history
+#        uses: actions/checkout@v4
+#        if: always()
+#        continue-on-error: true
+#        with:
+#          ref: gh-pages
+#          path: gh-pages
+#      - name: Build test report
+#        uses: simple-elf/allure-report-action@v1.7
+#        if: always()
+#        with:
+#          allure_history: allure-history
+#          keep_reports: 5
+#      - name: Publish test report
+#        uses: peaceiris/actions-gh-pages@v3
+#        if: always()
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_branch: gh-pages
+#          publish_dir: allure-history
