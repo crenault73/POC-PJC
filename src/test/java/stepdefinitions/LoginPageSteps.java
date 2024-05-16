@@ -5,7 +5,8 @@ import com.saucedemo.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+//import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoginPageSteps {
     LoginPage login = new LoginPage(DriverFactory.getPage());
@@ -18,7 +19,7 @@ public class LoginPageSteps {
     @When("User verify the Page title")
     public void verifyPageTitle() {
         String title = login.verifyTitle();
-        Assert.assertEquals(title, "Swag Labs");
+        assertEquals(title, "Swag Labs");
     }
 
     //Login into the application

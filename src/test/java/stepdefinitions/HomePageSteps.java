@@ -4,7 +4,8 @@ import com.saucedemo.pages.DriverFactory;
 import com.saucedemo.pages.HomePage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
+//import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class HomePageSteps {
     public void userVerifyTheFirstProductName(String expectedProductName) {
         String productName = home.getFirstProductName();
         System.out.println(productName);
-        Assert.assertEquals(expectedProductName, productName);
+        assertEquals(expectedProductName, productName);
     }
 
     @Then("User add product {string} to chart")
@@ -30,7 +31,7 @@ public class HomePageSteps {
         if (productList == null)
             System.err.println("Data table is empty");
         else {
-            String header = productList.get(0);
+            String header = productList.getFirst();
             System.out.println("Header:"+header);
             for (int i=1; i<productList.size(); i++) { //skip header: element 0
                 home.addProductToChart(productList.get(i));
