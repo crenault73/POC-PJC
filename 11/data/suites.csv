@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri May 17 09:51:36 GMT 2024","Fri May 17 09:51:38 GMT 2024","2441","","Login","","Login to the SwagLabs Application with the correct credentials.","","Login to the SwagLabs Application with the correct credentials.",""
+"passed","Fri May 17 09:51:32 GMT 2024","Fri May 17 09:51:36 GMT 2024","3818","","Login","","Login to the SwagLabs Application with the correct credentials.","","Login to the SwagLabs Application with the correct credentials.",""
+"passed","Fri May 17 09:51:18 GMT 2024","Fri May 17 09:51:32 GMT 2024","14267","","Chart","","From home page add products to the chart","","From home page add products to the chart",""
