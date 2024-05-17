@@ -6,9 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
       - name: bats install
         run: npm install -g bats
       - name: bats version
@@ -18,6 +15,8 @@ jobs:
         with:
           java-version: '21'
           distribution: 'zulu'
+      - name: Maven version
+        run: mvn --version
       - name: Maven Compile
         #run: mvn --batch-mode clean; rm -rf allure-re*; mvn --batch-mode package -DskipTests=true
         run: mvn --batch-mode compile
